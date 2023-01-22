@@ -3,10 +3,10 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Category List</h2>
+            <h2 class="text-primary">Список категорий</h2>
         </div>
         <div class="col-6 text-right">
-            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">Создать новую категорию</a>
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Новая категория</a>
         </div>
     </div>
     
@@ -32,7 +32,7 @@
                         <td class="text-center">
                             <div class="w-100 btn-group" role="group">
                                 <a asp-controller="Category" asp-route-Id="@obj.Id" asp-action="Edit" class="btn btn-primary mx-1"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a asp-controller="Category" asp-route-Id="@obj.Id" asp-action="Delete" class="btn btn-danger mx-1">Удаление</a>
+                                <a asp-controller="Category" asp-route-Id="@obj.Id" asp-action="Delete" class="btn btn-danger mx-1"><i class="fa-regular fa-trash-can"></i></a>
                             </div>
                         </td>
                     </tr>
