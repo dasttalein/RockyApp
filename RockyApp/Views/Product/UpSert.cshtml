@@ -39,7 +39,7 @@
                         <label asp-for="Product.Description"></label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="Product.Description" class="form-control"/>
+                        <textarea asp-for="Product.Description" class="form-control summernote"> </textarea>
                         <span asp-validation-for="Product.Description" class="text-danger"></span>
                     </div>
                 </div>
@@ -52,7 +52,6 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                
                     <div class="col-4">
                         <label asp-for="Product.CategoryId"></label>
                     </div>
@@ -92,4 +91,26 @@
 @section Scripts
 {
     @{<partial name="_ValidationScriptsPartial"/>}
+    <script>
+    $(document).ready(function() {
+      $('.summernote').summernote({
+      height:250
+      });
+    });
+    
+    // Если изображение не загружено, то будет выводиться кастомизированное сообщение
+        function validateInput() { 
+            if (document.getElementById("uploadBox").value === "") { 
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'error',
+                  title: 'Пожалуйста загрузите изображение!',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+                return false;
+            }
+            return true;
+        }      
+    </script>
 }
